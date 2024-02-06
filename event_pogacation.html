@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parentid{
+          background-color: aqua;
+          height: 400px;
+          width: 400px;
+        }
+        #childid{
+            background-color: rgb(206, 220, 13);
+          height: 200px;
+          width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parentid">
+        <div id="childid">
+
+        </div>
+    </div>
+    <script>
+   const parentid=document.getElementById("parentid")
+   const childid=document.getElementById("childid")
+
+   const parentcoll=()=>{
+    alert('parent div coll')
+    console.log("parent div coll");
+   }
+
+   const childcoll=()=>{
+alert("child div coll")
+console.log("child div coll");
+
+   }
+
+
+
+   parentid.addEventListener('click',parentcoll,true)
+   childid.addEventListener('click',childcoll,true)
+
+
+    </script>
+</body>
+</html>

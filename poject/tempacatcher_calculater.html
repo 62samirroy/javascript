@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tempcalc" onsubmit="calculateTemp(); return false">
+    
+    <input type="number" name="temp" id="temp">
+    <br>
+    <select name="temp_diff" id="temp_diff">
+        <option value="cel">calsius</option>
+        <option value="fah">fahrenheit</option>
+    </select>
+    <input type="submit" name="temp"><br>
+    <p id="resultcontaner"></p>
+    
+    
+    
+    </div>
+
+    <script>
+
+  const calculateTemp=()=>{
+
+  const numbertemp=document.getElementById("temp").value;
+  const tempsel=document.getElementById("temp_diff");
+  const valuetemp=temp_diff.options[tempsel.selectedIndex].value;
+
+  const caltofah=(cal1)=>{
+    let fahrenheit1=math.round((cal1*9)/5+32);
+ return fahrenheit1;  
+}
+  const fahtocal=(fah1)=>{
+    let calsius1=math.round((fah1-32)*5/9);
+ return calsius1;  
+}
+  let result;
+  if(valuetemp=='cel'){
+   console.log(valuetemp);
+    result=caltofah(numbertemp);
+    document.getElementById("resultcontaner").innerHTML=`${result} fahrenheit`
+
+  }
+  else{
+
+    result=fahtocal(numbertemp);
+    document.getElementById("resultcontaner").innerHTML=`${result} calsius`
+
+  }
+
+
+  }
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contaner">
+        <div id="joke" class="joke">Awesome joke is loding</div>
+        <button id="jokebutn" class="btn">next joke</button>
+    </div>
+<script>
+// promisec
+// const joke=document.querySelector("#joke");
+// const jokebutn=document.querySelector("#jokebutn");
+
+
+// const generatejoke   =()=>{
+
+//   const setheader={
+
+//     Headers:{
+//         accept:"application/json"
+//     }
+
+//   }
+
+
+//     fetch('https://dad-jokes.p.rapidapi.com/random/joke',setheader)
+//     .then((res)=>res.json())
+//     .then((data)=>{
+//         joke.innerHTML=data.joke
+//     })
+//     .catch((error)=>{
+//         console.log(error);
+//     })
+
+// }
+
+// jokebutn.addEventListener('click',generatejoke)
+// generatejoke();
+
+const jokes=document.querySelector("#joke");
+const jokebutn=document.querySelector("#jokebutn");
+
+
+const generatejoke =async()=>{
+    try{
+  const setheader={
+
+    Headers:{
+        accept:"application/json"
+    }
+
+  }
+
+
+   const res =await fetch('https://dad-jokes.p.rapidapi.com/random/joke',setheader)
+    const data=await res.json()
+        jokes.innerHTML=data.joke;
+}catch(error){
+    console.log(`${error}`);
+}
+
+}
+jokebutn.addEventListener('click',generatejoke)
+generatejoke();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>a function is triggered when the user is passing a key in the input fild</p>
+    <br>
+    <input type="text" class="office-1" onkeydown="keydown()" onkeyup="keyup()" onkeypress="keypass()">
+    <br>
+    <p id="keys"></p>
+
+    <script>
+
+//     const keypass=()=>{
+
+//   document.getElementById("keys").innerHTML=`you pass ${event.key} and it is code ${event.code}`;
+
+//     }
+    const keyup=()=>{
+
+  document.getElementById("keys").innerHTML="key is up";
+
+    }
+    const keydown=()=>{
+
+  document.getElementById("keys").innerHTML="key id down";
+
+    }
+
+
+
+    </script>
+
+
+
+</body>
+</html>
